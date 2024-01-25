@@ -21,8 +21,8 @@ import java.util.Map;
 
 public class GitFileManager {
     static String repoURL = "https://github.com/echicoine-icf/IGExampleRefresh.git";
-    static String folderPath = "src/main/java/resources/QI-CORE";
-    static String localFolderPath = "input/resources"; // Replace with your local folder path
+    static String folderPath = "src/main/java/resources/SAMPLE";
+    static String localFolderPath = "input/resources";
 
     //Clone repo to temp folder which gets deleted when we're done:
 
@@ -46,7 +46,7 @@ public class GitFileManager {
             File[] folders = destFolder.listFiles(File::isDirectory);
             if (folders != null) {
                 for (File subfolder : folders) {
-                    File destSubfolder = new File(subfolder, "input/resources");
+                    File destSubfolder = new File(subfolder, localFolderPath);
 
                     //put the json files into the resource folder:
                     FileUtils.copyDirectory(subfolder, destSubfolder);
